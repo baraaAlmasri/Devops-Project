@@ -1,4 +1,4 @@
-version: '3.8' 
+version: '3.8'
 
 services:
   www:
@@ -11,6 +11,11 @@ services:
       - "80:80"
     depends_on:
       - db
+    environment:
+      SERVERNAME: db
+      USERNAME: root
+      PASSWORD: ${PASSWORD}
+      DATABASENAME: restaurant_db
 
   db:
     image: mysql
@@ -18,7 +23,8 @@ services:
     volumes:
       - mysql:/var/lib/mysql
     environment:
-      MYSQL_ROOT_PASSWORD: ${PASSWORD} 
+      MYSQL_ROOT_PASSWORD: ${PASSWORD}
+      MYSQL_DATABASE: restaurant_db
 
   phpmyadmin:
     image: phpmyadmin
