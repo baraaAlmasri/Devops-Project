@@ -1,14 +1,12 @@
-version: '3.8'
-
 services:
   www:
     build:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - ./app:/var/www/html
+      - ../app:/var/www/html
     ports:
-      - "80:80"
+      - "8081:80"
     depends_on:
       - db
     environment:
@@ -30,7 +28,7 @@ services:
     image: phpmyadmin
     restart: always
     ports:
-      - 8080:80
+      - 8082:80
     depends_on:
       - db
     environment:
