@@ -1,5 +1,5 @@
 <?php
-include '../../server/config/db_config.php';
+include './db_config.php';
 
 $meal = $_POST['meal'] ?? '';
 
