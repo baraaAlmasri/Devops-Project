@@ -31,4 +31,4 @@ GitHub Repository: Stores project code and enables team collaboration.
 
 Jenkins CI/CD: Automates building, testing, and deploying updates to the application.
 
-Docker Container: Hosts the application, ensuring consistency across environments...
+Docker Container: Hosts the application, ensuring consistency across environments.
