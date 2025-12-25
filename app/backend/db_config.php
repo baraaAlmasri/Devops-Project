@@ -1,8 +1,9 @@
 <?php
-$servername = "${SERVERNAME}";
-$username = "${USERNAME}";
-$password = "${PASSWORD}";
-$dbname = "${DATABASENAME}";
+$servername = getenv('SERVERNAME');      
+$username   = getenv('USERNAME');     
+$password   = getenv('PASSWORD');  
+$dbname     = getenv('DATABASENAME');      
+
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 

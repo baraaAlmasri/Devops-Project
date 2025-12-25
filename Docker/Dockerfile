@@ -1,8 +1,15 @@
 FROM ubuntu:22.04
 
-RUN apt update && apt install -y apache2 php libapache2-mod-php php-mysql
+ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt clean
+
+RUN apt update && apt install -y \
+    apache2 \
+    php \
+    libapache2-mod-php \
+    php-mysql \
+    tzdata
 
 WORKDIR /var/www/html
 

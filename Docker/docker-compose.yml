@@ -1,34 +1,38 @@
-version: '3.8' 
-
 services:
   www:
     build:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - ./app:/var/www/html
+      - ../app:/var/www/html
     ports:
-      - "80:80"
+      - "8081:80"
     depends_on:
       - db
+    environment:
+      SERVERNAME: ${SERVERNAME}
+      USERNAME: ${USERNAME}
+      PASSWORD: ${PASSWORD}
+      DATABASENAME: ${DATABASENAME}
 
   db:
-    image: mysql
+    image: mysql:latest
     restart: always
     volumes:
       - mysql:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: ${PASSWORD} 
+      MYSQL_DATABASE: ${DATABASENAME}
 
   phpmyadmin:
-    image: phpmyadmin
+    image: phpmyadmin:latest
     restart: always
     ports:
-      - 8080:80
+      - "8082:80"
     depends_on:
       - db
     environment:
-      - PMA_ARBITRARY=1
+      PMA_ARBITRARY: 1
 
 volumes:
   mysql:
