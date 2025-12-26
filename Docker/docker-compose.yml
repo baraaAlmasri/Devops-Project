@@ -10,10 +10,10 @@ services:
     depends_on:
       - db
     environment:
-      SERVERNAME: ${SERVERNAME}
-      USERNAME: ${USERNAME}
-      PASSWORD: ${PASSWORD}
-      DATABASENAME: ${DATABASENAME}
+      SERVERNAME: db
+      USERNAME: root
+      PASSWORD: password
+      DATABASENAME: restaurant_db
 
   db:
     image: mysql:latest
@@ -21,8 +21,8 @@ services:
     volumes:
       - mysql:/var/lib/mysql
     environment:
-      MYSQL_ROOT_PASSWORD: ${PASSWORD} 
-      MYSQL_DATABASE: ${DATABASENAME}
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: restaurant_db
 
   phpmyadmin:
     image: phpmyadmin:latest
