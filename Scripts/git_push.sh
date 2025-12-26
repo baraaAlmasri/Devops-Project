@@ -5,5 +5,5 @@ read Message
 User=`whoami`
 cd /home/$User/Devops-Project
 git add .
-git commit -m $Message
+git commit -m "$Message"
 git push origin main
