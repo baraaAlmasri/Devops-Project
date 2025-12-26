@@ -9,11 +9,9 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            background-color: red;
         }
 
         body {
-            background-color: red;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
             display: flex;
